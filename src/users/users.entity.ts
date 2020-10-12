@@ -5,11 +5,20 @@ export class Users {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    length: 10
+  })
   firstName: string;
 
-  @Column()
+  @Column({
+    length: 10
+  })
   lastName: string;
+
+  @Column({
+    length: 50
+  })
+  email: string;
 
   @Column({ default: true })
   isActive: boolean;
