@@ -3,4 +3,5 @@
 3. Relation
 4. Basic Crud operation
 5. DTO validation
-6. Migration (Remain)
+7. Entity Cascade (Remain)
+8. Migration (Remain)
