@@ -1,6 +1,6 @@
-1. DTO validation
-2. TypeORM
-3. Entity
-4. Relation
-5. Curd operation
-6. migration
+1. TypeORM
+2. Entity
+3. Relation
+4. Basic Crud operation
+5. DTO validation
+6. Migration

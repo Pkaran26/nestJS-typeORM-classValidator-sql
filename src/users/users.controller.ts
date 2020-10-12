@@ -1,13 +1,15 @@
 import { Controller, Post, Get, Delete, Body, Param } from '@nestjs/common';
 import { UsersService } from './users.service'
 import { Users } from './users.entity';
+import { ValidationPipe } from '../validation.pipe'
+import { CreateUserDto } from './create-user.dto'
 
 @Controller('users')
 export class UsersController {
   constructor(private _usersService: UsersService){}
 
   @Post('/')
-  createUser(@Body() payload: Users): Promise<any> {
+  createUser(@Body(new ValidationPipe()) payload: CreateUserDto): Promise<Users> {
     return this._usersService.create(payload)
   }
 
@@ -17,7 +19,7 @@ export class UsersController {
   }
 
   @Get('/:id')
-  getUser(@Param('id') id: string): Promise<any> {
+  getUser(@Param('id') id: string): Promise<Users> {
     return this._usersService.findOne(id)
   }
 
