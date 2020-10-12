@@ -3,6 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { Connection } from 'typeorm';
 import { Users } from './users/users.entity';
+import { Profile } from './users/profile/profile.entity';
+import { Posts } from './users/post/post.entity';
+
 
 @Module({
   imports: [
@@ -13,9 +16,14 @@ import { Users } from './users/users.entity';
       username: 'prateek',
       password: 'Pkaran26',
       database: 'test',
-      entities: [Users],
+      entities: [Users, Profile, Posts],
       synchronize: true,
       autoLoadEntities: true,
+      // migrationsTableName: "custom_migration_table",
+      // migrations: ["migration/*.js"],
+      // cli: {
+      //     migrationsDir: "migration"
+      // }
     }),
     UsersModule,
   ],

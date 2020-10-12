@@ -12,6 +12,9 @@ export class Profile {
   @Column()
   age: number;
 
+  @Column()
+  dob: Date;
+
   @OneToOne(type => Users)
   @JoinColumn()
   user: Users;
